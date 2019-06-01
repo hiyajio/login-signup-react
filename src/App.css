@@ -119,8 +119,18 @@ input {
 }
 
 input.error {
-  color: red;
   border-color: red;
+}
+
+input#success {
+  border-color: green;
+}
+
+.success,
+.success:hover {
+  color: green !important;
+  cursor: default !important;
+  opacity: 1 !important;
 }
 
 a:hover,

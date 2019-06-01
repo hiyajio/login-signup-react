@@ -22,7 +22,7 @@ class SignInForm extends Component {
           </label>
           <input
             type="email"
-            id="email"
+            id={!errors.email && touched.email && "success"}
             className={errors.email && touched.email && "error"}
             placeholder="Enter your email"
             name="email"
@@ -33,6 +33,9 @@ class SignInForm extends Component {
           {errors.email && touched.email && (
             <div className="FormFieldError">{errors.email}</div>
           )}
+          {!errors.email && touched.email && (
+            <i class="success material-icons done_outline">done_outline</i>
+          )}
         </div>
 
         <div className="FormField">
@@ -41,7 +44,7 @@ class SignInForm extends Component {
           </label>
           <input
             type="password"
-            id="password"
+            id={!errors.password && touched.password && "success"}
             className={errors.password && touched.password && "error"}
             placeholder="Enter your password"
             name="password"
@@ -49,9 +52,12 @@ class SignInForm extends Component {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <i class="material-icons visibility">visibility_off</i>
+          {/* <i class="material-icons visibility">visibility_off</i> */}
           {errors.password && touched.password && (
             <div className="FormFieldError">{errors.password}</div>
+          )}
+          {!errors.password && touched.password && (
+            <i class="success material-icons done_outline">done_outline</i>
           )}
         </div>
 

@@ -22,7 +22,7 @@ class SignUpForm extends Component {
           </label>
           <input
             type="name"
-            id="name"
+            id={!errors.name && touched.name && "success"}
             className={errors.name && touched.name && "error"}
             placeholder="Enter your full name"
             name="name"
@@ -33,6 +33,9 @@ class SignUpForm extends Component {
           {errors.name && touched.name && (
             <div className="FormFieldError">{errors.name}</div>
           )}
+          {!errors.name && touched.name && (
+            <i class="success material-icons done_outline">done_outline</i>
+          )}
         </div>
 
         <div className="FormField">
@@ -41,7 +44,7 @@ class SignUpForm extends Component {
           </label>
           <input
             type="email"
-            id="email"
+            id={!errors.email && touched.email && "success"}
             className={errors.email && touched.email && "error"}
             placeholder="Enter your email"
             name="email"
@@ -52,6 +55,9 @@ class SignUpForm extends Component {
           {errors.email && touched.email && (
             <div className="FormFieldError">{errors.email}</div>
           )}
+          {!errors.email && touched.email && (
+            <i class="success material-icons done_outline">done_outline</i>
+          )}
         </div>
 
         <div className="FormField">
@@ -60,7 +66,7 @@ class SignUpForm extends Component {
           </label>
           <input
             type="password"
-            id="password"
+            id={!errors.password && touched.password && "success"}
             className={errors.password && touched.password && "error"}
             placeholder="Enter your password"
             name="password"
@@ -68,9 +74,12 @@ class SignUpForm extends Component {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <i class="material-icons visibility">visibility_off</i>
+          {/* <i class="material-icons visibility">visibility_off</i> */}
           {errors.password && touched.password && (
             <div className="FormFieldError">{errors.password}</div>
+          )}
+          {!errors.password && touched.password && (
+            <i class="success material-icons done_outline">done_outline</i>
           )}
         </div>
 
@@ -80,7 +89,7 @@ class SignUpForm extends Component {
           </label>
           <input
             type="password"
-            id="passwordConfirm"
+            id={!errors.passwordConfirm && touched.passwordConfirm && "success"}
             className={
               errors.passwordConfirm && touched.passwordConfirm && "error"
             }
@@ -90,9 +99,12 @@ class SignUpForm extends Component {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <i class="material-icons visibility">visibility_off</i>
+          {/* <i class="material-icons visibility">visibility_off</i> */}
           {errors.passwordConfirm && touched.passwordConfirm && (
             <div className="FormFieldError">{errors.passwordConfirm}</div>
+          )}
+          {!errors.passwordConfirm && touched.passwordConfirm && (
+            <i class="success material-icons done_outline">done_outline</i>
           )}
         </div>
 
